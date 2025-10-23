@@ -53,7 +53,7 @@ export default function Layout({ children, currentPageName }) {
             {/* Logo */}
             <Link to={createPageUrl("Home")} className="flex items-center gap-3">
               <img 
-                src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68f1e479452527a7a4e86570/e0713679b_1aaacef8e_Screenshot_22-removebg-preview.png" 
+                src="public/images/logo.png" 
                 alt="EAGL Logo" 
                 className="w-12 h-12 object-contain"
               />
