@@ -40,7 +40,7 @@ export default function Layout({ children, currentPageName }) {
     const favicon = document.querySelector("link[rel*='icon']") || document.createElement('link');
     favicon.type = 'image/png';
     favicon.rel = 'icon';
-    favicon.href = 'https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/68f1e479452527a7a4e86570/e0713679b_1aaacef8e_Screenshot_22-removebg-preview.png';
+    favicon.href = '/images/favicon.png';
     document.head.appendChild(favicon);
   }, [currentPageName]);
 
