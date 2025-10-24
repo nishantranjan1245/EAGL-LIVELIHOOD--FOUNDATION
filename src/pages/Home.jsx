@@ -102,34 +102,33 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/90 via-teal-800/90 to-cyan-900/85"></div>
           
           {/* Enhanced Geometric Pattern Overlay */}
-<svg className="absolute inset-0 w-full h-full opacity-20">
-  <defs>
-    <pattern id="geometric-pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
-      <motion.circle 
-        cx="50" 
-        cy="50" 
-        r="30" 
-        fill="none" 
-        stroke="#10b981" 
-        strokeWidth="2"
-        initial={{ scale: 0.8, opacity: 0.3 }}
-        animate={{ scale: [0.8, 1.2, 0.8], opacity: [0.3, 0.8, 0.3] }}
-        transition={{ duration: 4, repeat: Infinity }}
-      />
-      <motion.polygon 
-        points="50,20 80,80 20,80" 
-        fill="none" 
-        stroke="#14b8a6" 
-        strokeWidth="2"
-        initial={{ rotate: 0 }}
-        animate={{ rotate: 360 }}
-        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-      />
-    </pattern>
-  </defs>
-  <rect width="100%" height="100%" fill="url(#geometric-pattern)" />
-</svg>
-
+          <svg className="absolute inset-0 w-full h-full opacity-20">
+            <defs>
+              <pattern id="geometric-pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+                <motion.circle 
+                  cx="50" 
+                  cy="50" 
+                  r="30" 
+                  fill="none" 
+                  stroke="#10b981" 
+                  strokeWidth="2"
+                  initial={{ scale: 0.8, opacity: 0.3 }}
+                  animate={{ scale: [0.8, 1.2, 0.8], opacity: [0.3, 0.8, 0.3] }}
+                  transition={{ duration: 4, repeat: Infinity }}
+                />
+                <motion.polygon 
+                  points="50,20 80,80 20,80" 
+                  fill="none" 
+                  stroke="#14b8a6" 
+                  strokeWidth="2"
+                  initial={{ rotate: 0 }}
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#geometric-pattern)" />
+          </svg>
 
           {/* Enhanced Animated Concentric Circles */}
           <div className="absolute inset-0 flex items-center justify-center">
