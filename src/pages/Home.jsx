@@ -76,10 +76,10 @@ export default function Home() {
   ];
 
   const recentInitiatives = [
-    { image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=800", title: "Tree Plantation Drive" },
-    { image: "https://images.unsplash.com/photo-1464226184884-fa280b87c399?q=80&w=800", title: "Water Conservation Project" },
-    { image: "https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?q=80&w=800", title: "Community Workshop" },
-    { image: "https://images.unsplash.com/photo-1536147116438-62679a5e01f2?q=80&w=800", title: "Clean-Up Campaign" }
+    { image: "/images/image1.jpg", title: "Tree Plantation Drive" },
+    { image: "/images/image2.jpg", title: "Water Conservation Project" },
+    { image: "/images/image3.jpg", title: "Community Workshop" },
+    { image: "/images/image4.jpg", title: "Clean-Up Campaign" }
   ];
 
   return (
