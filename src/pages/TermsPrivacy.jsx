@@ -28,7 +28,7 @@ export default function TermsPrivacy() {
             transition={{ duration: 1.5 }}
           >
             <img 
-              src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=2000" 
+              src="/images/terms&privacy-hero-image.jpg" 
               alt="Terms and Privacy"
               className="w-full h-full object-cover"
             />

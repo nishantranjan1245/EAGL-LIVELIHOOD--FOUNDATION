@@ -91,7 +91,7 @@ export default function GetInvolved() {
             transition={{ duration: 1.8 }}
           >
             <img 
-              src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?q=80&w=2000" 
+              src="/images/getinvolved-hero-image.jpg" 
               alt="Join us"
               className="w-full h-full object-cover"
             />

@@ -143,7 +143,7 @@ export default function Programs() {
             transition={{ duration: 2 }}
           >
             <img 
-              src="https://images.unsplash.com/photo-1593113598332-cd288d649433?q=80&w=2000" 
+              src="/images/programs-hero-image.jpg" 
               alt="Environmental programs"
               className="w-full h-full object-cover"
             />

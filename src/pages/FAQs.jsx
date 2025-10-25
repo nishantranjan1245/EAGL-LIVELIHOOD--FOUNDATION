@@ -148,7 +148,7 @@ export default function FAQs() {
             transition={{ duration: 1.5 }}
           >
             <img 
-              src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2000" 
+              src="/images/faq-hero-image.jpg" 
               alt="FAQs"
               className="w-full h-full object-cover"
             />

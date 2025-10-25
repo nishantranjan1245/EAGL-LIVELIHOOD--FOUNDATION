@@ -104,7 +104,7 @@ ${formData.message}
             transition={{ duration: 1.5 }}
           >
             <img
-              src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?q=80&w=2000"
+              src="/images/volunteer-hero-image.jpg"
               alt="Volunteers"
               className="w-full h-full object-cover"
             />

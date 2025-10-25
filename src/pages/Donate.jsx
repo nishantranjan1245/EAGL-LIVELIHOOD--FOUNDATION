@@ -54,7 +54,7 @@ export default function Donate() {
             transition={{ duration: 1.5 }}
           >
             <img 
-              src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?q=80&w=2000" 
+              src="/images/donate-hero-image.jpg" 
               alt="Donate"
               className="w-full h-full object-cover"
             />
