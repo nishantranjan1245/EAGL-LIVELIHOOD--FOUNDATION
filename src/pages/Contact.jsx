@@ -110,7 +110,7 @@ ${formData.message}
             transition={{ duration: 1.5 }}
           >
             <img 
-              src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?q=80&w=2000" 
+              src="/images/contact-hero-image.jpg" 
               alt="Contact us"
               className="w-full h-full object-cover"
             />

@@ -81,7 +81,7 @@ export default function About() {
             transition={{ duration: 2, ease: "easeOut" }}
           >
             <img
-              src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?q=80&w=2000"
+              src="/images/about-hero-image.jpg"
               alt="Nature conservation"
               className="w-full h-full object-cover"
             />
