@@ -87,72 +87,52 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Animated Background */}
-        <div className="absolute inset-0 z-0" style={{ willChange: 'auto', transform: 'translateZ(0)' }}>
+        <div className="absolute inset-0 z-0">
           <motion.div
             initial={{ scale: 1.2, rotate: 2 }}
             animate={{ scale: 1, rotate: 0 }}
             transition={{ duration: 2.5, ease: "easeOut" }}
-            style={{ willChange: 'transform', transform: 'translateZ(0)' }}
           >
             <img 
               src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=2000" 
               alt="Community planting trees in nature"
               className="w-full h-full object-cover"
-              loading="eager"
-              style={{ transform: 'translateZ(0)', backfaceVisibility: 'hidden' }}
             />
           </motion.div>
-          <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/90 via-teal-800/90 to-cyan-900/85" style={{ transform: 'translateZ(0)' }}></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-emerald-900/90 via-teal-800/90 to-cyan-900/85"></div>
           
           {/* Enhanced Geometric Pattern Overlay */}
-          <svg className="absolute inset-0 w-full h-full opacity-20" style={{ transform: 'translateZ(0)' }}>
+          <svg className="absolute inset-0 w-full h-full opacity-20">
             <defs>
               <pattern id="geometric-pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
-                <circle 
+                <motion.circle 
                   cx="50" 
                   cy="50" 
                   r="30" 
                   fill="none" 
                   stroke="#10b981" 
                   strokeWidth="2"
-                >
-                  <animate
-                    attributeName="r"
-                    values="24;36;24"
-                    dur="4s"
-                    repeatCount="indefinite"
-                  />
-                  <animate
-                    attributeName="opacity"
-                    values="0.3;0.8;0.3"
-                    dur="4s"
-                    repeatCount="indefinite"
-                  />
-                </circle>
-                <polygon 
+                  initial={{ scale: 0.8, opacity: 0.3 }}
+                  animate={{ scale: [0.8, 1.2, 0.8], opacity: [0.3, 0.8, 0.3] }}
+                  transition={{ duration: 4, repeat: Infinity }}
+                />
+                <motion.polygon 
                   points="50,20 80,80 20,80" 
                   fill="none" 
                   stroke="#14b8a6" 
                   strokeWidth="2"
-                >
-                  <animateTransform
-                    attributeName="transform"
-                    attributeType="XML"
-                    type="rotate"
-                    from="0 50 50"
-                    to="360 50 50"
-                    dur="20s"
-                    repeatCount="indefinite"
-                  />
-                </polygon>
+                  initial={{ rotate: 0 }}
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                />
               </pattern>
             </defs>
             <rect width="100%" height="100%" fill="url(#geometric-pattern)" />
           </svg>
 
           {/* Enhanced Animated Concentric Circles */}
-          <div className="absolute inset-0 flex items-center justify-center" style={{ transform: 'translateZ(0)' }}>
-            {[...Array(isMobile ? 4 : 8)].map((_, i) => (
+          <div className="absolute inset-0 flex items-center justify-center">
+            {[...Array(8)].map((_, i) => (
               <motion.div
                 key={i}
                 className="absolute border-2 border-emerald-400/30 rounded-full"
@@ -168,18 +148,13 @@ export default function Home() {
                   delay: i * 1,
                   ease: "easeOut"
                 }}
-                style={{ 
-                  willChange: 'transform, opacity',
-                  transform: 'translate3d(0, 0, 0)',
-                  backfaceVisibility: 'hidden'
-                }}
               />
             ))}
           </div>
 
           {/* Enhanced Gradient Orbs */}
           <motion.div
-            className="absolute top-1/4 left-1/4 w-80 h-80 md:w-[500px] md:h-[500px] bg-gradient-to-br from-emerald-400/40 to-teal-500/40 rounded-full blur-3xl"
+            className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-gradient-to-br from-emerald-400/40 to-teal-500/40 rounded-full blur-3xl"
             animate={{ 
               scale: [1, 1.5, 1], 
               opacity: [0.4, 0.7, 0.4],
@@ -187,14 +162,9 @@ export default function Home() {
               y: [0, -60, 0]
             }}
             transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-            style={{ 
-              willChange: 'transform, opacity',
-              transform: 'translate3d(0, 0, 0)',
-              backfaceVisibility: 'hidden'
-            }}
           />
           <motion.div
-            className="absolute bottom-1/4 right-1/4 w-80 h-80 md:w-[500px] md:h-[500px] bg-gradient-to-br from-cyan-400/40 to-blue-500/40 rounded-full blur-3xl"
+            className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-gradient-to-br from-cyan-400/40 to-blue-500/40 rounded-full blur-3xl"
             animate={{ 
               scale: [1.5, 1, 1.5], 
               opacity: [0.7, 0.4, 0.7],
@@ -202,16 +172,11 @@ export default function Home() {
               y: [0, 60, 0]
             }}
             transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-            style={{ 
-              willChange: 'transform, opacity',
-              transform: 'translate3d(0, 0, 0)',
-              backfaceVisibility: 'hidden'
-            }}
           />
 
           {/* Diagonal Lines Animation */}
-          <svg className="absolute inset-0 w-full h-full opacity-10 pointer-events-none" style={{ transform: 'translateZ(0)' }}>
-            {[...Array(isMobile ? 8 : 15)].map((_, i) => (
+          <svg className="absolute inset-0 w-full h-full opacity-10">
+            {[...Array(15)].map((_, i) => (
               <motion.line
                 key={i}
                 x1="0"
@@ -231,60 +196,44 @@ export default function Home() {
                   delay: i * 0.3,
                   ease: "easeInOut"
                 }}
-                style={{ vectorEffect: 'non-scaling-stroke' }}
               />
             ))}
           </svg>
 
           {/* Rotating Border Elements */}
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none" style={{ transform: 'translateZ(0)' }}>
+          <div className="absolute inset-0 flex items-center justify-center">
             <motion.div
-              className="absolute w-80 h-80 md:w-[500px] md:h-[500px] border-4 border-emerald-400/20 rounded-full"
+              className="absolute w-[500px] h-[500px] border-4 border-emerald-400/20 rounded-full"
               animate={{ rotate: 360 }}
               transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-              style={{ 
-                willChange: 'transform',
-                transform: 'translate3d(0, 0, 0)',
-                backfaceVisibility: 'hidden'
-              }}
             />
             <motion.div
-              className="absolute w-64 h-64 md:w-[400px] md:h-[400px] border-4 border-cyan-400/20 rounded-full"
+              className="absolute w-[400px] h-[400px] border-4 border-cyan-400/20 rounded-full"
               animate={{ rotate: -360 }}
               transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-              style={{ 
-                willChange: 'transform',
-                transform: 'translate3d(0, 0, 0)',
-                backfaceVisibility: 'hidden'
-              }}
             />
           </div>
 
           {/* Floating Leaves Animation */}
-          {[...Array(isMobile ? 6 : 12)].map((_, i) => (
+          {[...Array(12)].map((_, i) => (
             <motion.div
               key={i}
-              className="absolute text-4xl md:text-6xl opacity-20 pointer-events-none"
+              className="absolute text-6xl opacity-20"
               initial={{
-                x: `${Math.random() * 100}%`,
+                x: Math.random() * 100 + "%",
                 y: -100,
                 rotate: 0
               }}
               animate={{
-                y: ['0vh', '120vh'],
-                x: [`${parseFloat(Math.random() * 100) + (Math.random() > 0.5 ? 10 : -10)}%`, `${Math.random() * 100}%`], // Adjust x for a "swaying" effect
-                rotate: [0, 360]
+                y: "120vh",
+                x: `${parseFloat(Math.random() * 100 + "%") + (Math.random() > 0.5 ? 10 : -10)}%`,
+                rotate: 360
               }}
               transition={{
                 duration: 10 + Math.random() * 10,
                 repeat: Infinity,
                 delay: i * 0.8,
                 ease: "linear"
-              }}
-              style={{ 
-                willChange: 'transform',
-                transform: 'translate3d(0, 0, 0)',
-                backfaceVisibility: 'hidden'
               }}
             >
               🍃
@@ -310,17 +259,15 @@ export default function Home() {
               <motion.div
                 animate={{ rotate: [0, 360] }}
                 transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-                style={{ willChange: 'transform', transform: 'translateZ(0)' }}
               >
-                <Sparkles className="w-8 h-8 md:w-10 md:h-10 text-yellow-300" />
+                <Sparkles className="w-10 h-10 text-yellow-300" />
               </motion.div>
-              <span className="text-emerald-200 font-black text-xl md:text-2xl tracking-wide drop-shadow-2xl">🌟 Environmental Excellence</span>
+              <span className="text-emerald-200 font-black text-2xl tracking-wide drop-shadow-2xl">🌟 Environmental Excellence</span>
               <motion.div
                 animate={{ rotate: [0, -360] }}
                 transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-                style={{ willChange: 'transform', transform: 'translateZ(0)' }}
               >
-                <Sparkles className="w-8 h-8 md:w-10 md:h-10 text-yellow-300" />
+                <Sparkles className="w-10 h-10 text-yellow-300" />
               </motion.div>
             </motion.div>
             
@@ -332,29 +279,23 @@ export default function Home() {
             >
               <h1 className="font-black leading-tight mb-4">
                 <motion.div 
-                  className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
+                  className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl"
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
-                  style={{ willChange: 'transform, opacity' }}
                 >
                   <span className="bg-gradient-to-r from-emerald-200 via-teal-100 to-cyan-200 bg-clip-text text-transparent drop-shadow-2xl">
-                    Together for a Greener,
-                  </span>
-                  <br />
-                  <span className="bg-gradient-to-r from-emerald-200 via-teal-100 to-cyan-200 bg-clip-text text-transparent drop-shadow-2xl">
-                    Sustainable Tomorrow
+                    Together for a Greener, Sustainable Tomorrow
                   </span>
                 </motion.div>
               </h1>
             </motion.div>
             
             <motion.p 
-              className="text-lg md:text-2xl lg:text-3xl text-cyan-50 mb-14 leading-relaxed font-bold drop-shadow-2xl max-w-5xl mx-auto"
+              className="text-2xl md:text-3xl text-cyan-50 mb-14 leading-relaxed font-bold drop-shadow-2xl max-w-5xl mx-auto"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1 }}
-              style={{ willChange: 'transform, opacity' }}
             >
               EAGL Livelihood Foundation is a non-profit organization dedicated to{" "}
               <span className="text-emerald-300 font-black">protecting the environment</span>,{" "}
@@ -363,7 +304,7 @@ export default function Home() {
             </motion.p>
             
             <motion.div 
-              className="flex flex-col sm:flex-row gap-6 md:gap-8 justify-center items-center"
+              className="flex flex-col sm:flex-row gap-8 justify-center items-center"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.2 }}
@@ -372,10 +313,10 @@ export default function Home() {
                 <Button 
                   asChild 
                   size="lg"
-                  className="bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 hover:from-emerald-600 hover:via-teal-600 hover:to-cyan-600 text-white text-lg md:text-2xl px-10 md:px-14 py-7 md:py-10 shadow-2xl hover:shadow-emerald-500/50 transition-all duration-300 font-black border-4 border-white/30"
+                  className="bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 hover:from-emerald-600 hover:via-teal-600 hover:to-cyan-600 text-white text-2xl px-14 py-10 shadow-2xl hover:shadow-emerald-500/50 transition-all duration-300 font-black border-4 border-white/30"
                 >
                   <Link to={createPageUrl("GetInvolved")}>
-                    <Heart className="w-5 h-5 md:w-7 md:h-7 mr-2 md:mr-3" />
+                    <Heart className="w-7 h-7 mr-3" />
                     🌱 Support Our Work
                   </Link>
                 </Button>
@@ -384,10 +325,10 @@ export default function Home() {
                 <Button 
                   asChild 
                   size="lg"
-                  className="bg-white/15 backdrop-blur-md border-4 border-white text-white hover:bg-white hover:text-emerald-700 text-lg md:text-2xl px-10 md:px-14 py-7 md:py-10 font-black shadow-2xl hover:shadow-white/50 transition-all duration-300"
+                  className="bg-white/15 backdrop-blur-md border-4 border-white text-white hover:bg-white hover:text-emerald-700 text-2xl px-14 py-10 font-black shadow-2xl hover:shadow-white/50 transition-all duration-300"
                 >
                   <Link to={createPageUrl("GetInvolved")}>
-                    <Users className="w-5 h-5 md:w-7 md:h-7 mr-2 md:mr-3" />
+                    <Users className="w-7 h-7 mr-3" />
                     🤝 Join as Volunteer
                   </Link>
                 </Button>
@@ -398,19 +339,18 @@ export default function Home() {
 
         {/* Enhanced Scroll Indicator */}
         <motion.div
-          className="absolute bottom-8 md:bottom-12 left-1/2 transform -translate-x-1/2"
-          animate={{ y: [0, 15, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          style={{ willChange: 'transform', transform: 'translateZ(0)' }}
+          className="absolute bottom-12 left-1/2 transform -translate-x-1/2"
+          animate={{ y: [0, 20, 0] }}
+          transition={{ duration: 2.5, repeat: Infinity }}
         >
-          <div className="w-8 h-14 md:w-10 md:h-16 border-3 md:border-4 border-white/60 rounded-full flex items-start justify-center p-2">
+          <div className="w-10 h-16 border-4 border-white/60 rounded-full flex items-start justify-center p-2">
             <motion.div
-              className="w-2 h-2 md:w-3 md:h-3 bg-white rounded-full"
-              animate={{ y: [0, 24, 0] }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+              className="w-3 h-3 bg-white rounded-full"
+              animate={{ y: [0, 32, 0] }}
+              transition={{ duration: 2.5, repeat: Infinity }}
             />
           </div>
-          <p className="text-white text-xs md:text-sm font-bold mt-2 md:mt-3 text-center drop-shadow-lg">Scroll Down</p>
+          <p className="text-white text-sm font-bold mt-3 text-center drop-shadow-lg">Scroll Down</p>
         </motion.div>
       </section>
 
