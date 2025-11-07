@@ -1,49 +1,30 @@
 import Layout from "./Layout.jsx";
 
 import Home from "./Home";
-
 import About from "./About";
-
 import Programs from "./Programs";
-
 import Impact from "./Impact";
-
 import GetInvolved from "./GetInvolved";
-
 import Contact from "./Contact";
-
 import Donate from "./Donate";
-
 import FAQs from "./FAQs";
-
 import TermsPrivacy from "./TermsPrivacy";
-
 import Volunteer from "./Volunteer";
 
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import ScrollToTop from "@/components/ScrollToTop";
 
 const PAGES = {
-    
     Home: Home,
-    
     About: About,
-    
     Programs: Programs,
-    
     Impact: Impact,
-    
     GetInvolved: GetInvolved,
-    
     Contact: Contact,
-    
     Donate: Donate,
-    
     FAQs: FAQs,
-    
     TermsPrivacy: TermsPrivacy,
-    
     Volunteer: Volunteer,
-    
 }
 
 function _getCurrentPage(url) {
@@ -67,30 +48,17 @@ function PagesContent() {
     return (
         <Layout currentPageName={currentPage}>
             <Routes>            
-                
-                    <Route path="/" element={<Home />} />
-                
-                
+                <Route path="/" element={<Home />} />
                 <Route path="/Home" element={<Home />} />
-                
                 <Route path="/About" element={<About />} />
-                
                 <Route path="/Programs" element={<Programs />} />
-                
                 <Route path="/Impact" element={<Impact />} />
-                
                 <Route path="/GetInvolved" element={<GetInvolved />} />
-                
                 <Route path="/Contact" element={<Contact />} />
-                
                 <Route path="/Donate" element={<Donate />} />
-                
                 <Route path="/FAQs" element={<FAQs />} />
-                
                 <Route path="/TermsPrivacy" element={<TermsPrivacy />} />
-                
                 <Route path="/Volunteer" element={<Volunteer />} />
-                
             </Routes>
         </Layout>
     );
@@ -99,6 +67,7 @@ function PagesContent() {
 export default function Pages() {
     return (
         <Router>
+            <ScrollToTop />
             <PagesContent />
         </Router>
     );
