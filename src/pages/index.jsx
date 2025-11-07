@@ -12,7 +12,7 @@ import TermsPrivacy from "./TermsPrivacy";
 import Volunteer from "./Volunteer";
 
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
-import ScrollToTop from "@/components/ScrollToTop";
+import ScrollToTop from "@/components/ScrollToTop";  // ✅ Step 1: यह लाइन जोड़ें
 
 const PAGES = {
     Home: Home,
@@ -67,7 +67,7 @@ function PagesContent() {
 export default function Pages() {
     return (
         <Router>
-            <ScrollToTop />
+            <ScrollToTop /> {/* ✅ Step 2: यह लाइन यहाँ जोड़ें */}
             <PagesContent />
         </Router>
     );
